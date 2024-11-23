@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #1f2937;
+            color: white;
+            padding: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .header-logo {
+            font-weight: bold;
+            font-size: 1.2rem;
+            padding: 0.5rem 0;
+        }
+
+        .header-links {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .header-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            padding: 0.5rem 0;
+            transition: opacity 0.3s;
+        }
+
+        .header-links a:hover {
+            opacity: 1;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #1f2937;
+            color: white;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 300px;
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+        }
+
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        /* Info Section */
+        .info-section {
+            padding: 3rem 1rem;
+            text-align: center;
+        }
+
+        .info-section h2 {
+            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .info-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            padding: 0 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card-image {
+            border: 2px solid #3b82f6;
+            border-radius: 8px;
+            width: 100%;
+            max-width: 250px;
+            aspect-ratio: 1;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Quote Section */
+        .quote-section {
+            background-color: #e5e7eb;
+            padding: 3rem 1rem;
+        }
+
+        .quote-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .quote {
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
+            font-style: italic;
+            color: #4b5563;
+            margin-bottom: 1rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 3rem 1rem;
+        }
+
+        .cta-container {
+            background-color: #3b82f6;
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        /* Button Styles */
+        .button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 0.5rem 2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            display: inline-block;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #2563eb;
+        }
+
+        .button.white {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .button.white:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        footer {
+            background-color: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+            }
+
+            .header-links {
+                justify-content: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 2rem 1rem;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .cta-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .info-cards {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .quote {
+                font-size: 1.2rem;
+            }
+
+            .info-section {
+                padding: 2rem 1rem;
+            }
+
+            .cta-container {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-logo">HEALTH HAVEN</div>
+        <nav class="header-links">
+            <a href="#">Tumukunde</a>
+            <a href="#">Reine</a>
+            <a href="#">Hyguette_24940</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Life Through Wellness</h1>
+            <p>Join our community dedicated to holistic health, where expert insights meet practical wellness solutions. Discover the perfect balance of mind, body, and spirit.</p>
+            <a href="#" class="button">Sign up</a>
+        </div>
+        <div class="hero-image">
+            <img src="Wellnes.png" alt="Wellness illustration">
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>WEEKLY WELLNESS FOCUS</h2>
+        <div class="info-cards">
+            <div class="info-card">
+                <div class="card-image">
+                    <img src="fitnes icon.png" alt="Fitness icon">
+                </div>
+                <p>Week 1: Building Strength & Endurance</p>
+            </div>
+            <div class="info-card">
+                <div class="card-image">
+                    <img src="meditation icon.png" alt="Meditation icon">
+                </div>
+                <p>Week 2: Finding Inner Peace</p>
+            </div>
+            <div class="info-card">
+                <div class="card-image">
+                    <img src="nutrition icon.png" alt="Nutrition icon">
+                </div>
+                <p>Week 3: Fueling Your Body Right</p>
+            </div>
+            <div class="info-card">
+                <div class="card-image">
+                    <img src="sleep icon.png" alt="Sleep icon">
+                </div>
+                <p>Week 4: Mastering Restorative Rest</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="quote-section">
+        <div class="quote-container">
+            <p class="quote">"Your health is an investment, not an expense. The choices we make today shape the life we'll live tomorrow."</p>
+            <p class="quote-author">- Wellness Wisdom</p>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <div>
+                <h3>Call to action! It's time!</h3>
+                <p>Sign up for our latest podcasts by clicking that button right over there!</p>
+            </div>
+            <a href="#" class="button white">Sign up</a>
+        </div>
+    </section>
+
+    <footer>
+        Copyright © Health Haven 2024
+    </footer>
+</body>
+</html>
